@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block ul-header %}
+  <p>My education</p>
+{% endblock %}
+
+{% block ul %}
+
+  {% if learn_places %}
+    {% for elt in learn_places %}
+      <span class="bold">Organization name: </span> {{ elt.organization.name }}<br>
+      <span class="bold">Graduation year: </span> {{ elt.year|date:"Y" }}
+    {% endfor %}
+  {% else %}
+    {{ filler }}
+  {% endif %}
+
+{% endblock %}

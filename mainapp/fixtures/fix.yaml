@@ -1,0 +1,66 @@
+- fields:
+    firstname: "Kirill"
+    lastname: "Lapshin"
+    born: 1984-03-28
+    place : "Moscow region"
+  model: mainapp.person
+  pk: 1
+
+- fields:
+    name: "VSK insurance company"
+    region: "Moscow"
+    type: "BS"
+    site: "vsk.ru"
+  model: mainapp.organization
+  pk: 1
+
+- fields:
+    name: "Absolute insurance company"
+    region: "Moscow"
+    type: "BS"
+    site: "absolutins.ru"
+  model: mainapp.organization
+  pk: 2
+
+- fields:
+    name: "Upwork"
+    region: "US"
+    type: "BS"
+    site: "upwork.com"
+  model: mainapp.organization
+  pk: 3
+
+- fields:
+    name: "People Friendship University"
+    region: "Moscow"
+    type: "ED"
+    site: "rudn.ru"
+  model: mainapp.organization
+  pk: 4
+
+- fields:
+    organization: 1
+    period: 18
+    position: "Specialist"
+  model: mainapp.work
+  pk: 1
+
+- fields:
+    organization: 2
+    period: 32
+    position: "Senior specialist"
+  model: mainapp.work
+  pk: 2
+
+- fields:
+    organization: 3
+    period: 6
+    position: "Independent consultant"
+  model: mainapp.work
+  pk: 3
+
+- fields:
+    organization: 4
+    year: 2007-07-15
+  model: mainapp.education
+  pk: 1

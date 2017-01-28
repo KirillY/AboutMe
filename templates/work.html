@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block ul-header %}
+    <p>My work experience</p>
+{% endblock %}
+
+{% block ul %}
+
+    {% if work_places %}
+        {% for elt in work_places %}
+            <div class="desc">
+                <span class="bold">Organization:</span> <a href="{% url 'org' elt.organization.pk %}">{{ elt.organization.name }}</a><br>
+                <span class="bold">Period:</span> {{ elt.period }} month(s)<br>
+                <span class="bold">Position:</span> {{ elt.position }}
+            </div>
+        {% endfor %}
+        {% else %}
+            {{ filler }}
+    {% endif %}
+
+{% endblock %}
+
+{% block imgs %}
+    <div class="container-fluid text-center" id="imgs">
+    <h3>A few pictures from my previous work</h3><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <p>On the dark desert highway</p>
+            <img src="{% static "img/work01.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <p>Cool wind in my hair</p>
+            <img src="{% static "img/work02.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <p>Worm smell of colitas...</p>
+            <img src="{% static "img/work03.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+            <p>...But you could never leave!</p>
+            <!-- 2d way to use url's - hardlink to the local storage -->
+            <img src="/static/img/work04.jpg" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+    </div>
+</div>
+{% endblock %}

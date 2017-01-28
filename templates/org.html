@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block ul-header %}
+    <p>Organization description</p>
+{% endblock %}
+
+{% block ul %}
+
+        <span class="bold">Name:</span> {{ organization.name }}<br>
+        <span class="bold">Region:</span> {{ organization.region }}<br>
+        <span class="bold">Type:</span> {{ organization.type }}<br>
+        {% if organization.site %}
+            <span class="bold">Web-site:</span> <a href="http://{{ organization.site }}">{{ organization.site }}</a>
+        {% endif %}
+
+{% endblock %}
